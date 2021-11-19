@@ -47,6 +47,7 @@ class AuctionIndexPage extends Component{
                                     <p>Created at: {moment(a.created_at).format("MMM Do, YYYY")}</p>
                                     <p>End at: {moment(a.ends_at).format("MMM Do, YYYY")}</p>
                                     <p>Owner: {a.author ? a.author.full_name : null}</p>
+                                    <p>Status: {a.status}</p>
                                 </Card> 
                         <br/>
                         </div>

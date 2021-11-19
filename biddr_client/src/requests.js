@@ -21,7 +21,18 @@ export const Auction = {
         // console.log("inside")
       return fetch(`${BASE_URL}/auctions/${id}`)
         .then(res => res.json())
-    }
+    },
+    publish(id) {
+      return fetch(`${BASE_URL}/auctions/${id}`, {
+        method: 'PATCH',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({status: 'publish'})
+      }).then(res => res.json())
+  }
+
 }
 export const Session = {
   create(params) {

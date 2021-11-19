@@ -4,6 +4,7 @@ import {Auction} from '../requests';
 import {Link} from 'react-router-dom';
 import BidForm from "./BidForm"
 import BidDetails from "./BidDetails"
+import PublishForm from "./PublishForm";
 import {Grid} from "@material-ui/core"
 
 class AuctionShowPage extends Component {
@@ -27,7 +28,7 @@ class AuctionShowPage extends Component {
 
 
   render() {
-    const { id, title, description, ends_at, reserve_price,bids,author} = this.state.auction;
+    const { id, title, description, ends_at, reserve_price,bids,author,status} = this.state.auction;
     let bid_arr=[]
     return(
       <main>
@@ -42,24 +43,40 @@ class AuctionShowPage extends Component {
           reserve_price={reserve_price}
           bid={bid_arr}
           author={author}    
+          status={status}  
         />
      </Grid>
-     <Grid item className="col-12">
-    
-        <BidForm id={id} history={this.props.history}/>
-        <h6>Previous Bids</h6>
-        {bids? bids.map((b, i) => {
-        return <BidDetails
-          key={i}
-          id={b.id}
-          price={b.price}
-          created_at={b.created_at}
-          updated_at={b.updated_at}
-        />
-       
-        
-      }): ""}
-      </Grid>
+
+   { status == 'draft'? 
+     (
+          <Grid item className="col-12">
+            <PublishForm id={id} history={this.props.history}
+                auction={this.state.auction}
+                onSubmit={this.createPublish}
+                errors={this.state.errors}
+              />
+        </Grid>
+     )
+     :
+     (
+          <Grid item className="col-12">
+          
+              <BidForm id={id} history={this.props.history}/>
+              <h6>Previous Bids</h6>
+              {bids? bids.map((b, i) => {
+              return <BidDetails
+                key={i}
+                id={b.id}
+                price={b.price}
+                created_at={b.created_at}
+                updated_at={b.updated_at}
+              />
+              
+              
+            }): ""}
+            </Grid>
+     )
+    }
      </Grid>
       </main>
 

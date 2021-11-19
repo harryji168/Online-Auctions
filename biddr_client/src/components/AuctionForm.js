@@ -7,7 +7,8 @@ const AuctionForm = ({createAuction})=>{
             title: formData.get("title"),
             description: formData.get("description"),
             ends_at:formData.get("ends_at"),
-            reserve_price: formData.get("reserve_price")
+            reserve_price: formData.get("reserve_price"),
+            status: 'draft'
         }
 
         createAuction(params)
@@ -36,7 +37,7 @@ const AuctionForm = ({createAuction})=>{
                 <input type="number" className="form-control" name='reserve_price' id='reserve_price' />
             </div>
             <div>
-                <button type='submit'className="btn btn-outline-primary" value='Save'>Create</button>
+                <button type='submit' className="ui primary button" value='Save'>Create</button>
             </div>
 
         </form>

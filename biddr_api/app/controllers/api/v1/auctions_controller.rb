@@ -1,6 +1,6 @@
 class Api::V1::AuctionsController < Api::ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
-    before_action :find_auction, only:[:show]
+    before_action :find_auction, only:[:show, :update]
     def create
         auction = Auction.new auction_params
         auction.user = current_user
@@ -24,6 +24,23 @@ class Api::V1::AuctionsController < Api::ApplicationController
         render json: auctions
     end
 
+    def update
+
+        params = ActionController::Parameters.new({
+            auction: {          
+                status: "published"
+            }
+        })
+
+        permitted = params.require(:auction).permit(:status)
+        permitted            # => <ActionController::Parameters {"name"=>"Francesco", "age"=>22} permitted: true>
+        permitted.permitted? # => true
+
+        @auction.update!(permitted)
+
+
+        puts "updated"
+    end     
 
     private
 
@@ -32,7 +49,8 @@ class Api::V1::AuctionsController < Api::ApplicationController
     end
 
     def auction_params
-        params.require(:auction).permit(:title,:description,:ends_at, :reserve_price)
+        params.require(:auction).permit(:title,:description,:ends_at, :reserve_price, :status)
     end
+ 
 end
 
