@@ -21,8 +21,8 @@ const SignUpPage =({handleSubmit, history})=>{
     return(
         <main>
                        <Container>
-                <Row className="mb-4">
-        <Col xs={6} >
+                <Row className="mb-4 ">
+        <Col xs={12} >
         <h1>Sign Up</h1>
         <Form onSubmit={onSubmit}>
                 <Form.Group controlId="exampleForm.ControlInput1">

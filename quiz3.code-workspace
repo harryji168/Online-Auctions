@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "biddr_client"
+		},
+		{
+			"path": "."
 		}
 	],
 	"settings": {}

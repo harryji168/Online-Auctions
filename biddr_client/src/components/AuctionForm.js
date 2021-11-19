@@ -24,16 +24,16 @@ const AuctionForm = ({createAuction})=>{
                 <label htmlFor='description'>Description</label>
                 <br />
                 <textarea name='description' className="form-control" id='description' />
+            </div>            
+            <div className="form-group">
+                <label htmlFor='ends_at'>Ends At</label>
+                <br />
+                <input type="date" className="form-control" name='ends_at' id='ends_at' />
             </div>
             <div className="form-group">
                 <label htmlFor='reserve_price'>Reserve Price</label>
                 <br />
                 <input type="number" className="form-control" name='reserve_price' id='reserve_price' />
-            </div>
-            <div className="form-group">
-                <label htmlFor='ends_at'>Ends At</label>
-                <br />
-                <input type="date" className="form-control" name='ends_at' id='ends_at' />
             </div>
             <div>
                 <button type='submit'className="btn btn-outline-primary" value='Save'>Create</button>

@@ -26,14 +26,14 @@ const NavBar =(props)=>{
                         (
                         <>
                             <p className="text-white">{`${props.currentUser.first_name} ${props.currentUser.last_name}`}</p> 
-                            |
+                             
                             <button onClick={handleSignOut}>Sign Out</button>
                         </>
                         )
                         :
                         <>
                         <Nav.Link href='/sign_in'>Sign In</Nav.Link>
-                        |
+                         
                         <Nav.Link href='/sign_up'>Sign Up</Nav.Link>
                         </>
                 }

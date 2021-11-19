@@ -20,7 +20,7 @@ const SignInPage =({handleSubmit, history})=>{
         <main>
             <Container>
                 <Row className="mb-4">
-        <Col xs={6} >
+        <Col xs={12} >
         <h1>Sign In</h1>
         <Form onSubmit={onSubmit}>
                 <Form.Group controlId="exampleForm.ControlInput1">
