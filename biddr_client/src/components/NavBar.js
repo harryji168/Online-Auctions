@@ -20,11 +20,12 @@ const NavBar =(props)=>{
                     <Nav>
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/auctions">Auctions</Nav.Link>
-                    <Nav.Link href="/auctions/new">New</Nav.Link>
+                   
                     {
                         props.currentUser? 
                         (
                         <>
+                            <Nav.Link href="/auctions/new">New</Nav.Link>
                             <p className="text-white">{`${props.currentUser.first_name} ${props.currentUser.last_name}`}</p> 
                              
                             <button onClick={handleSignOut}>Sign Out</button>

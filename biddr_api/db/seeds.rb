@@ -41,6 +41,7 @@ NUM_AUCTIONS.times do
         description: Faker::Quote.famous_last_words,
         ends_at: Faker::Date.forward(days: 100),
         reserve_price: reserve_price,
+        status: 'published',
         created_at: created_at,
         updated_at: created_at,
         user: users.sample

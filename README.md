@@ -162,8 +162,16 @@ Value: 5
 
 Support auction states.
 
-Add support for states, draft, published and reserve met, to the auction model.
+### Add support for states, draft, published and reserve met, to the auction model.
+
+
+![Screenshot ](https://github.com/harryji168/Pictures/blob/4f9cc17f9639c251f096f3450774fc79203fc14b/Screenshot%20from%202021-11-19%2013-16-16.png)
+
+
+
 When created an auction should be set to the draft state. In draft state, the auction is only visible to the author.
+
+
 Implement a Publish button, only visible to the author of the auction, in the AuctionShowPage.
 When clicked, this sets the auction's state to published. All published auctions should be visible.
 When a user bids higher than the auctions reserve price, set the reserve met state on the auction. This can only happen on published auctions.
