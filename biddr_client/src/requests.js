@@ -29,9 +29,20 @@ export const Auction = {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({status: 'publish'})
+        body: JSON.stringify({status: 'published'})
       }).then(res => res.json())
-  }
+    },
+    reserve(id){
+      return fetch(`${BASE_URL}/auctions/${id}`, {
+        method: 'PATCH',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({status: 'reserve_met'})
+      }).then(res => res.json())
+
+    }
 
 }
 export const Session = {

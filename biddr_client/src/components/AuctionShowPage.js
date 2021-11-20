@@ -61,7 +61,7 @@ class AuctionShowPage extends Component {
      (
           <Grid item className="col-12">
           
-              <BidForm id={id} history={this.props.history}/>
+              <BidForm id={id} reserve_price={reserve_price} history={this.props.history}/>
               <h6>Previous Bids</h6>
               {bids? bids.map((b, i) => {
               return <BidDetails

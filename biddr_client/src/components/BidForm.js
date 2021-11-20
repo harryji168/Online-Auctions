@@ -3,19 +3,24 @@ import {Bid,Auction} from '../requests';
 
 
 const BidForm = (props)=>{
-    const {id} = props
+    const {id, reserve_price} = props
     const [price,setPrice]=useState('');
     const handleSubmit = (event)=>{
-        // event.preventDefault();
+        event.preventDefault();
         const formData= new FormData(event.currentTarget);
         const params={
             price: formData.get('price'),
         }
+        console.log(price);
+        console.log(reserve_price);
         Bid.create(id,params)
-        .then(()=>{
-            console.log("here")
-            Auction.show(id)
-        })
+        .then(()=>{ 
+           if( price > reserve_price){  
+                Auction.reserve(id)
+           } 
+           window.location.reload();
+          // Auction.show(id)
+        })         
     }
 
     return(

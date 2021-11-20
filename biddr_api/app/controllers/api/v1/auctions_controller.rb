@@ -26,19 +26,21 @@ class Api::V1::AuctionsController < Api::ApplicationController
 
     def update
 
-        params = ActionController::Parameters.new({
-            auction: {          
-                status: "published"
-            }
-        })
+        # params = ActionController::Parameters.new({
+        #     auction: {          
+        #         status: "published"
+        #     }
+        # })
 
-        permitted = params.require(:auction).permit(:status)
-        permitted            # => <ActionController::Parameters {"name"=>"Francesco", "age"=>22} permitted: true>
-        permitted.permitted? # => true
+        # permitted = params.require(:auction).permit(:status)
+        # permitted            # => <ActionController::Parameters {"name"=>"Francesco", "age"=>22} permitted: true>
+        # permitted.permitted? # => true
 
-        @auction.update!(permitted)
+        # @auction.update!(permitted)
 
-
+        if @auction.update auction_params
+        else
+        end        
         puts "updated"
     end     
 
