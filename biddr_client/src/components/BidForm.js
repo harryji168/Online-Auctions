@@ -19,12 +19,11 @@ const BidForm = (props)=>{
                 Auction.reserve(id)
            } 
            window.location.reload();
-          // Auction.show(id)
         })         
     }
 
     return(
-        <div>
+        <div className="d-flex justify-content-center">
             <form className="ui form m-5"  onSubmit={event=>handleSubmit(event)}>
                 <div className="field">
                     <label htmlFor="price">Price</label>

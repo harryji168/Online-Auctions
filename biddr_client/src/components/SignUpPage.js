@@ -21,9 +21,8 @@ const SignUpPage =({handleSubmit, history})=>{
     return(
         <main>
                        <Container>
-                <Row className="mb-4 ">
-        <Col xs={12} >
-        <h1>Sign Up</h1>
+                       <h1>Sign Up</h1>
+                       <div className="d-flex justify-content-center"> 
         <Form onSubmit={onSubmit}>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Label>First Name </Form.Label>
@@ -50,9 +49,8 @@ const SignUpPage =({handleSubmit, history})=>{
                     Submit
                 </Button>
 
-        </Form>
-        </Col>
-        </Row>
+        </Form>        
+        </div>
         </Container>
         </main>
     )

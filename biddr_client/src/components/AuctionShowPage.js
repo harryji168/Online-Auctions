@@ -31,7 +31,7 @@ class AuctionShowPage extends Component {
     const { id, title, description, ends_at, reserve_price,bids,author,status} = this.state.auction;
     let bid_arr=[]
     return(
-      <main>
+      <main> 
         <Grid container justify="space-around">
           <Grid item className="col-12">
             {bids?bids.map(b => {
@@ -45,7 +45,7 @@ class AuctionShowPage extends Component {
           author={author}    
           status={status}  
         />
-     </Grid>
+       </Grid>
 
    { status == 'draft'? 
      (
@@ -78,6 +78,7 @@ class AuctionShowPage extends Component {
      )
     }
      </Grid>
+      
       </main>
 
     )

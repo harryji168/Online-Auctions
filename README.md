@@ -178,7 +178,9 @@ Support auction states.
 
 ### When clicked, this sets the auction's state to published. All published auctions should be visible.
 
-
+ ![Screenshot ](https://github.com/harryji168/Pictures/blob/726a181813651995e377efed993dc258c3645451/Screenshot%20from%202021-11-19%2018-11-17.png)
 
 
 ### When a user bids higher than the auctions reserve price, set the reserve met state on the auction. This can only happen on published auctions.
+
+ ![Screenshot ](https://github.com/harryji168/Pictures/blob/4fb4ef73f610f7839df7ba101e2b1b736fb515b2/Screenshot%20from%202021-11-19%2016-44-00.png)
