@@ -182,5 +182,6 @@ Support auction states.
 
 
 ### When a user bids higher than the auctions reserve price, set the reserve met state on the auction. This can only happen on published auctions.
-
+ 
  ![Screenshot ](https://github.com/harryji168/Pictures/blob/4fb4ef73f610f7839df7ba101e2b1b736fb515b2/Screenshot%20from%202021-11-19%2016-44-00.png)
+ 
